@@ -1,0 +1,105 @@
+.game-board {
+    display: inline-block;
+    background: #DEB887;
+    margin: 20px auto;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    border: 3px solid #8B4513;
+}
+
+.board-grid {
+    position: relative;
+    display: inline-block;
+}
+
+.board-line {
+    position: absolute;
+    background: #8B4513;
+}
+
+.board-line.horizontal {
+    height: 2px;
+    width: 100%;
+}
+
+.board-line.vertical {
+    width: 2px;
+    height: 100%;
+}
+
+.board-intersection {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    margin: -16px 0 0 -16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.board-intersection.black {
+    background: radial-gradient(circle, #000 85%, #333 100%);
+    color: white;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.board-intersection.white {
+    background: radial-gradient(circle, #fff 85%, #ddd 100%);
+    color: black;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    border: 1px solid #ccc;
+}
+
+.board-intersection.last-move {
+    box-shadow: 0 0 0 3px #ff6b6b;
+    z-index: 10;
+}
+
+/* Influence visualization */
+.board-intersection.black-influence {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.board-intersection.white-influence {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.board-intersection.strong-black-influence {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.board-intersection.strong-white-influence {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Captured piece animation */
+.board-intersection.captured {
+    animation: captureFlash 0.5s ease-in-out;
+}
+
+@keyframes captureFlash {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; background-color: #ff6b6b; }
+    100% { opacity: 0; }
+}
+
+/* Ko forbidden position styling */
+.board-intersection.ko-forbidden {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #ff0000;
+    font-weight: bold;
+    border: 2px solid #ff0000;
+}
+
+@keyframes pulse {
+    0% { border-color: #ff4444; }
+    50% { border-color: #ff8888; }
+    100% { border-color: #ff4444; }
+}

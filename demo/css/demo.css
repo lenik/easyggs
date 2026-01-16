@@ -1,0 +1,119 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 30px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #667eea;
+}
+
+.header h1 {
+    color: #667eea;
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.header p {
+    color: #666;
+    margin: 10px 0 0 0;
+    font-size: 1.1em;
+}
+
+.game-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.info-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.info-card h3 {
+    margin: 0 0 15px 0;
+    color: #667eea;
+}
+
+.playback-controls {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.playback-controls button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 0 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.playback-controls button:hover:not(:disabled) {
+    background: #5a6fd8;
+}
+
+.playback-controls button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.speed-control {
+    margin: 15px 0;
+}
+
+.speed-control input {
+    width: 150px;
+}
+
+.move-counter {
+    font-size: 18px;
+    font-weight: bold;
+    color: #667eea;
+    margin: 15px 0;
+}
+
+.board-container {
+    text-align: center;
+}
+
+.current-move-info {
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 4px solid #2196F3;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+    color: #666;
+}

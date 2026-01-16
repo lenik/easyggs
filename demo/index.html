@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyGGS NPC Demo - AI vs AI Game</title>
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/board.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 EasyGGS NPC Demo</h1>
+            <p>Watch two AI players compete in a strategic Go game</p>
+        </div>
+        
+        <div class="game-info">
+            <div class="info-card">
+                <h3>Game Information</h3>
+                <div id="gameInfo">
+                    <em>Loading game data...</em>
+                </div>
+            </div>
+            <div class="info-card">
+                <h3>Current Move</h3>
+                <div id="currentMoveInfo">
+                    <em>Game start - empty board</em>
+                </div>
+            </div>
+        </div>
+        
+        <div class="playback-controls">
+            <button id="firstMove">⏮️ First</button>
+            <button id="prevMove">⏪ Previous</button>
+            <button id="playPause">▶️ Play</button>
+            <button id="nextMove">⏩ Next</button>
+            <button id="lastMove">⏭️ Last</button>
+        </div>
+        
+        <div class="speed-control">
+            <label for="playbackSpeed">Playback Speed:</label>
+            <input type="range" id="playbackSpeed" min="200" max="2000" value="1000" step="100">
+            <span id="speedLabel">1.0s</span>
+        </div>
+        
+        <div class="move-counter">
+            <span id="moveCounter">Loading...</span>
+        </div>
+        
+        <div class="board-container">
+            <div id="gameBoard" class="game-board"></div>
+        </div>
+        
+        <div class="current-move-info">
+            <div id="moveDetails">
+                <em>Use the playback controls to watch the AI game unfold move by move</em>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>🎯 <strong>EasyGGS</strong> - Advanced Go Game Service with Strategic AI</p>
+            <p>Try different board sizes: <a href="?size=5">5x5</a> | <a href="?size=9">9x9</a> | <a href="?size=13">13x13</a> | <a href="?size=19">19x19</a></p>
+        </div>
+    </div>
+
+    <script src="js/demo.js"></script>
+</body>
+</html>

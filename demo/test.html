@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo API Test</title>
+</head>
+<body>
+    <h1>Demo API Test</h1>
+    <div id="result">Loading...</div>
+    
+    <script>
+    async function testAPI() {
+        try {
+            console.log('Testing API...');
+            const response = await fetch('/api/demo-data?size=5');
+            console.log('Response status:', response.status);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            console.log('Data received:', data);
+            
+            document.getElementById('result').innerHTML = `
+                <h2>Success!</h2>
+                <p>Total Moves: ${data.totalMoves}</p>
+                <p>Winner: ${data.winner}</p>
+                <p>End Reason: ${data.endReason}</p>
+                <pre>${JSON.stringify(data.moveHistory, null, 2)}</pre>
+            `;
+        } catch (error) {
+            console.error('Error:', error);
+            document.getElementById('result').innerHTML = `
+                <h2>Error!</h2>
+                <p>${error.message}</p>
+            `;
+        }
+    }
+    
+    // Test when page loads
+    document.addEventListener('DOMContentLoaded', testAPI);
+    </script>
+</body>
+</html>

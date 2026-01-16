@@ -1,0 +1,8 @@
+node_modules
+tests
+coverage
+*.test.ts
+*.spec.ts
+jest.config.js
+.git
+README.md
